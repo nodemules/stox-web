@@ -1,32 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import './App.css';
 import Home from "./Home";
-import AuthenticationContext, {Authentication} from "./Authentication/AuthenticationContext";
-import firebase from "firebase";
+import AuthenticationContext, {useAuthentication} from "./Authentication/AuthenticationContext";
 
 const App = () => {
-    const [user, setUser] = useState<firebase.User>()
-    const [accessToken, setAccessToken] = useState<String>()
-
-    const logout = () => {
-        firebase.auth().signOut()
-        .then(() => {
-            setUser(undefined)
-            setAccessToken(undefined)
-        })
-    }
-
-    const authentication = {
-        user, setUser, accessToken, setAccessToken, logout
-    } as Authentication
-
-    firebase.auth().onAuthStateChanged(user => {
-        setUser(user || undefined)
-    })
-
-    useEffect(() => {
-        user?.getIdToken(!accessToken).then(setAccessToken)
-    }, [user, accessToken])
+    const authentication = useAuthentication()
 
     return (
         <div className="App">
