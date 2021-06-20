@@ -1,13 +1,12 @@
 @import "./Logo";
 
 .Logout {
-  background-color: $background;
   display: inline-block;
   padding: .75rem 1.25rem;
   transform: rotate(-8deg) skew(-8deg, -8deg);
-  color: #fff;
   text-transform: uppercase;
   font-size: 1rem;
+  font-weight: bolder;
   letter-spacing: .15rem;
   transition: all .3s;
   position: relative;
@@ -17,6 +16,8 @@
   white-space: nowrap;
   cursor: pointer;
   border: 0;
+  color: #000;
+  font-family: 'Doppio One', sans-serif;
 
   &:after {
     content: '';
