@@ -6,8 +6,6 @@ export interface Authentication {
     accessToken: string,
     setUser: (user?: firebase.User) => {},
     setAccessToken: (accessToken?: String) => {},
-    authenticating: boolean,
-    setAuthenticating: (authenticating: boolean) => {},
     logout: () => {}
 }
 
