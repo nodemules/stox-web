@@ -1,3 +1,5 @@
+import style from "./Quote.module.scss";
+
 interface GlobalQuote {
     symbol: string,
     open: number,
@@ -7,27 +9,30 @@ interface GlobalQuote {
     latestTradingDay: Date,
     previousClose: number,
     change: number,
-    percentChange: string
+    changePercent: string
 }
 
 const Quote = ({quote}: { quote?: GlobalQuote }) => {
     if (!quote) return null;
 
-    const {symbol, price, change, percentChange} = quote;
+    const {symbol, price, latestTradingDay, change, changePercent} = quote;
 
     return (
-        <div>
-            <span>
+        <div className={style.Quote}>
+            <span className={style.QuoteElement}>
                 {symbol}
             </span>
-            <span>
+            <span className={style.QuoteElement}>
                 ${price}
             </span>
-            <span>
+            <span className={style.QuoteElement}>
+                {latestTradingDay}
+            </span>
+            <span className={style.QuoteElement}>
                 {change}
             </span>
-            <span>
-                {percentChange}
+            <span className={style.QuoteElement}>
+                {changePercent}
             </span>
         </div>
     )

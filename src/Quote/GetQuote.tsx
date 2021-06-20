@@ -19,7 +19,7 @@ const GetQuote = () => {
     }
 
     return (
-        <div>
+        <div style={{marginTop: "100px"}}>
             <form>
                 <input
                     className={Search}
