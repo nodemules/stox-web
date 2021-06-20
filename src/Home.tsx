@@ -1,10 +1,10 @@
 import Logo from "./Logo";
-import SignIn from "./SignIn";
+import SignIn from "./Authentication/SignIn";
 import React from "react";
-import AuthenticationContext from "./AuthenticationContext";
-import Authenticated from "./Authenticated";
-import UserProfileBadge from "./UserProfileBadge";
-import Logout from "./Logout";
+import AuthenticationContext from "./Authentication/AuthenticationContext";
+import Authenticated from "./Authentication/Authenticated";
+import UserProfileBadge from "./User/UserProfileBadge";
+import Logout from "./Authentication/Logout";
 
 const Home = () => {
     return (

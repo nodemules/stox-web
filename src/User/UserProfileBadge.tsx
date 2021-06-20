@@ -1,5 +1,5 @@
 import style from "./UserProfileBadge.module.scss"
-import AuthenticationContext from "./AuthenticationContext";
+import AuthenticationContext from "../Authentication/AuthenticationContext";
 
 const UserProfileBadge = () => {
     return (

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
 import Home from "./Home";
-import AuthenticationContext, {Authentication} from "./AuthenticationContext";
+import AuthenticationContext, {Authentication} from "./Authentication/AuthenticationContext";
 import firebase from "firebase";
 
 const App = () => {
