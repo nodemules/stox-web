@@ -3,16 +3,16 @@ import './App.css';
 import Logo from "./Logo";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <Logo />
-        <p>
-          Check on your favorite stoks!
-        </p>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <header className="App-header">
+                <Logo name={"Stox"}/>
+                <p>
+                    Check on your favorite stox!
+                </p>
+            </header>
+        </div>
+    );
 }
 
 export default App;

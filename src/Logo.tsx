@@ -1,11 +1,11 @@
 import './Logo.scss'
 
-const Logo = () => {
+const Logo = ({name}: { name: String }) => {
 
     return (
         <div className="logo texture">
             <div className="title texture">
-                <h1>Stok</h1>
+                <h1>{name}</h1>
             </div>
         </div>
     )
