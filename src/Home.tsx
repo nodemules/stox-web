@@ -5,6 +5,7 @@ import AuthenticationContext from "./Authentication/AuthenticationContext";
 import Authenticated from "./Authentication/Authenticated";
 import UserProfileBadge from "./User/UserProfileBadge";
 import Logout from "./Authentication/Logout";
+import GetQuote from "./Quote/GetQuote";
 
 const Home = () => {
     return (
@@ -18,9 +19,10 @@ const Home = () => {
                         </p>
                         <Authenticated>
                             <UserProfileBadge/>
-                            <div style={{paddingTop: "10px"}}>
+                            <div style={{paddingTop: "10px", marginBottom: "50px"}}>
                                 <Logout/>
                             </div>
+                            <GetQuote/>
                         </Authenticated>
                         {!user && <SignIn/>}
                     </>
