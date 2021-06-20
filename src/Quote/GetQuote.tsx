@@ -1,7 +1,7 @@
 import style from "./GetQuote.module.scss"
 import {getQuote} from "../Api/StoxQuoteApi";
 import {ChangeEvent, MouseEvent, useState} from "react";
-import JsonRenderer from "../JsonRenderer";
+import Quote from "./Quote";
 
 const GetQuote = () => {
 
@@ -31,7 +31,7 @@ const GetQuote = () => {
             >
                 Stox!
             </button>
-            {quote && <JsonRenderer data={quote}/>}
+            <Quote quote={quote} />
         </div>
     )
 }
