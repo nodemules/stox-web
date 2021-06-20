@@ -17,11 +17,9 @@ const Home = () => {
                             Check on your favorite stox!
                         </p>
                         <Authenticated>
-                            <div>
-                                <UserProfileBadge/>
-                                <div style={{paddingTop: "10px"}}>
-                                    <Logout />
-                                </div>
+                            <UserProfileBadge/>
+                            <div style={{paddingTop: "10px"}}>
+                                <Logout/>
                             </div>
                         </Authenticated>
                         {!user && <SignIn/>}
