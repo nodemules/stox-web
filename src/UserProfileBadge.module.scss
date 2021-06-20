@@ -1,0 +1,20 @@
+$height: 48px;
+
+.Photo {
+  border-radius: (50%);
+  display: inline-block;
+  height: $height;
+  width: ($height / 1);
+
+  :hover {
+    box-shadow: 0 4px 0 rgb(255 255 255 / 15%);
+  }
+}
+
+.Name {
+  font-size: large;
+  display: inline-block;
+  vertical-align: middle;
+  height: $height;
+  padding: 0 ($height / 8)
+}
