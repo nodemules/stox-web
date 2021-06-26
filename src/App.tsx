@@ -1,16 +1,18 @@
 import React from 'react';
 import './App.css';
-import Logo from "./Logo";
+import Home from "./Home";
+import AuthenticationContext, {useAuthentication} from "./Authentication/AuthenticationContext";
+import {useAxios} from "./Api/Axios";
 
-function App() {
+const App = () => {
+    const authentication = useAuthentication()
+    useAxios()
+
     return (
         <div className="App">
-            <header className="App-header">
-                <Logo name={"Stox"}/>
-                <p>
-                    Check on your favorite stox!
-                </p>
-            </header>
+            <AuthenticationContext.Provider value={authentication}>
+                <Home/>
+            </AuthenticationContext.Provider>
         </div>
     );
 }
