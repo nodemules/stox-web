@@ -23,10 +23,8 @@ const QuoteHistory = () => {
 
     const value = useMemo(() => {
         const local = [...history]
-        local.sort((a, b) => a.createdAt > b.createdAt ? 1 : -1)
-        local.splice(0, 1)
-        console.log(local)
-        return local;
+        local.splice(-1, 1)
+        return local.reverse();
     }, [history])
 
     return (

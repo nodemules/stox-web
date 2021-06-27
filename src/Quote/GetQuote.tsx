@@ -8,7 +8,7 @@ import QuoteContext from "./QuoteContext";
 const GetQuote = () => {
     const quoteContext = useContext(QuoteContext)
 
-    const [quote, setQuote] = useState<GlobalQuote | undefined>();
+    const [quote, setQuote] = useState<GlobalQuote | undefined>(undefined);
     const [searchTerm, setSearchTerm] = useState<string>("");
 
     const onChange = (event: ChangeEvent<HTMLInputElement>) => {
