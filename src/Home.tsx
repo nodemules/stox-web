@@ -9,6 +9,7 @@ import GetQuote from "./Quote/GetQuote";
 import Trending from "./Trending/Trending";
 import {QuoteContextProvider} from "./Quote/QuoteContext";
 import {useAxios} from "./Api/Axios";
+import QuoteHistory from "./Quote/QuoteHistory";
 
 const Home = () => {
     useAxios()
@@ -29,6 +30,7 @@ const Home = () => {
                             <QuoteContextProvider>
                                 <Trending />
                                 <GetQuote/>
+                                <QuoteHistory />
                             </QuoteContextProvider>
                         </Authenticated>
                         {!authenticated && <SignIn/>}

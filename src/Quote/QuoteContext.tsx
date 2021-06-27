@@ -3,7 +3,7 @@ import {GlobalQuote} from "./Quote";
 
 interface ValueContext<T> {
     value: T,
-    set: (t: T) => {},
+    set: (t: T | undefined) => {},
     clear: () => {}
 }
 
@@ -24,8 +24,10 @@ export default QuoteContext;
 export const QuoteContextProvider = (props: PropsWithChildren<any>) => {
     const context = useQuoteContext<GlobalQuote>();
 
+    const value = useMemo(() => context, [context])
+
     return (
-        <QuoteContext.Provider value={context}>
+        <QuoteContext.Provider value={value}>
             {props.children}
         </QuoteContext.Provider>
     )

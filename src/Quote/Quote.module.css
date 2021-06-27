@@ -74,7 +74,13 @@
 }
 
 .Quote {
-  margin-top: 100px;
+  width: fit-content;
+  margin: 0.25em auto;
+  display: flex;
+  justify-content: space-between;
+}
+.Quote .Element:not(:first-child), .Quote .Down:not(:first-child), .Quote .Up:not(:first-child), .Quote .Bright:not(:first-child) {
+  margin-left: 0.25rem;
 }
 .Quote .Bright {
   background-color: orange;
