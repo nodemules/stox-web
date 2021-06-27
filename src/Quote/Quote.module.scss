@@ -1,10 +1,17 @@
 @import "../global.module";
 
 .Quote {
-  margin-top: 100px;
+  width: fit-content;
+  margin: 0.25em auto;
+  display: flex;
+  justify-content: space-between;
 
   .Element {
     @extend .Block;
+
+    &:not(:first-child) {
+      margin-left: 0.25rem;
+    }
   }
 
   .Bright {
