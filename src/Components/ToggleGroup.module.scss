@@ -1,0 +1,24 @@
+@import "../global.module";
+
+.ToggleGroup {
+
+  .Buttons {
+    margin-top: 50px;
+
+    .Button {
+      @extend .Block;
+      @extend .Hoverable;
+    }
+
+    .Active {
+      @extend .Block;
+      @extend .Hoverable;
+
+      background-color: orange;
+
+      &:before {
+        background-color: darkorange;
+      }
+    }
+  }
+}

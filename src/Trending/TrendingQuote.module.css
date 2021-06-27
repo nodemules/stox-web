@@ -1,6 +1,8 @@
-.Block, .TrendingQuote .Element, .Button, .HoverableButton {
+.Block, .Button, .HoverableButton, .TrendingQuote .Element {
   display: inline-block;
   padding: 0.75rem 1.25rem;
+  margin-top: 1em;
+  margin-bottom: 1em;
   transform: rotate(-8deg) skew(-8deg, -8deg) translateY(-0.85rem);
   text-transform: uppercase;
   font-size: 1rem;
@@ -19,7 +21,7 @@
   cursor: default;
 }
 
-.Hoverable:after, .HoverableButton:after {
+.Hoverable:after, .HoverableButton:after, .TrendingQuote .Element:after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -28,7 +30,7 @@
   height: 100%;
   z-index: -2;
 }
-.Hoverable:before, .HoverableButton:before {
+.Hoverable:before, .HoverableButton:before, .TrendingQuote .Element:before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -39,35 +41,35 @@
   transition: all 0.3s;
   z-index: -1;
 }
-.Hoverable:hover, .HoverableButton:hover {
+.Hoverable:hover, .HoverableButton:hover, .TrendingQuote .Element:hover {
   color: #fff;
   background-color: #402060;
 }
-.Hoverable:hover:before, .HoverableButton:hover:before {
+.Hoverable:hover:before, .HoverableButton:hover:before, .TrendingQuote .Element:hover:before {
   width: 100%;
 }
 
-.Button, .HoverableButton {
+.Button, .HoverableButton, .TrendingQuote .Element {
   cursor: pointer;
 }
 
-.HoverableButton:hover {
+.HoverableButton:hover, .TrendingQuote .Element:hover {
   color: inherit;
 }
-.HoverableButton:hover:before {
+.HoverableButton:hover:before, .TrendingQuote .Element:hover:before {
   width: inherit;
 }
-.HoverableButton:hover:enabled {
+.HoverableButton:hover:enabled, .TrendingQuote .Element:hover:enabled {
   color: #fff;
 }
-.HoverableButton:hover:enabled:before {
+.HoverableButton:hover:enabled:before, .TrendingQuote .Element:hover:enabled:before {
   width: 100%;
 }
-.HoverableButton:disabled {
+.HoverableButton:disabled, .TrendingQuote .Element:disabled {
   color: black;
   cursor: default;
 }
-.HoverableButton:disabled:after {
+.HoverableButton:disabled:after, .TrendingQuote .Element:disabled:after {
   background-color: grey;
 }
 
@@ -81,12 +83,15 @@
   left: 0;
   width: 0;
   height: 100%;
-  background-color: hotpink;
+  background-color: #A6261B;
   transition: all 0.3s;
   z-index: -1;
 }
 .TrendingQuote .Element:hover {
   color: #fff;
+}
+.TrendingQuote .Element:hover:after {
+  background-color: #A6261B;
 }
 .TrendingQuote .Element:hover:before {
   width: 100%;

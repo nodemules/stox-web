@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 import {getTrending} from "../Api/stox/MarketApi";
 import {GlobalQuote} from "../Quote/Quote";
 import TrendingQuote from "./TrendingQuote";
+import ToggleGroup from "../Components/ToggleGroup";
 
 const Trending = () => {
     const [trending, setTrending] = useState<Array<GlobalQuote>>([])
@@ -17,20 +18,11 @@ const Trending = () => {
             <div className={style.Title}>
                 Trending Tickers
             </div>
-            <div className={style.Buttons}>
-                {
-                    (() => {
-                        const className = (value: String) => value === quoteType ? style.Active : style.Button
-                        const changeType = (value: String) => setQuoteType(value === quoteType ? undefined : value)
-                        return (
-                            <>
-                                <span className={className("EQUITY")} onClick={() => changeType("EQUITY")}>EQUITY</span>
-                                <span className={className("CRYPTOCURRENCY")} onClick={() => changeType("CRYPTOCURRENCY")}>CRYPTO</span>
-                            </>
-                        )
-                    })()
-                }
-            </div>
+            <ToggleGroup
+                elements={["EQUITY", "CRYPTOCURRENCY", "ETF"]}
+                selected={quoteType}
+                onSelected={setQuoteType}
+            />
             <div className={style.Quotes}>
                 {
                     trending.map(quote => (<TrendingQuote key={quote.symbol} quote={quote}/>))

@@ -1,4 +1,4 @@
-.Block, .Quote .Element, .Quote .Down, .Quote .Up, .Quote .Bright, .Button, .HoverableButton {
+.Block, .ToggleGroup .Buttons .Active, .ToggleGroup .Buttons .Button, .ToggleGroup .Buttons .HoverableButton, .Button, .HoverableButton {
   display: inline-block;
   padding: 0.75rem 1.25rem;
   margin-top: 1em;
@@ -21,7 +21,7 @@
   cursor: default;
 }
 
-.Hoverable:after, .HoverableButton:after {
+.Hoverable:after, .ToggleGroup .Buttons .Active:after, .ToggleGroup .Buttons .Button:after, .ToggleGroup .Buttons .HoverableButton:after, .HoverableButton:after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -30,7 +30,7 @@
   height: 100%;
   z-index: -2;
 }
-.Hoverable:before, .HoverableButton:before {
+.Hoverable:before, .ToggleGroup .Buttons .Active:before, .ToggleGroup .Buttons .Button:before, .ToggleGroup .Buttons .HoverableButton:before, .HoverableButton:before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -41,11 +41,11 @@
   transition: all 0.3s;
   z-index: -1;
 }
-.Hoverable:hover, .HoverableButton:hover {
+.Hoverable:hover, .ToggleGroup .Buttons .Active:hover, .ToggleGroup .Buttons .Button:hover, .ToggleGroup .Buttons .HoverableButton:hover, .HoverableButton:hover {
   color: #fff;
   background-color: #402060;
 }
-.Hoverable:hover:before, .HoverableButton:hover:before {
+.Hoverable:hover:before, .ToggleGroup .Buttons .Active:hover:before, .ToggleGroup .Buttons .Button:hover:before, .ToggleGroup .Buttons .HoverableButton:hover:before, .HoverableButton:hover:before {
   width: 100%;
 }
 
@@ -73,17 +73,14 @@
   background-color: grey;
 }
 
-.Quote {
-  margin-top: 100px;
+.ToggleGroup .Buttons {
+  margin-top: 50px;
 }
-.Quote .Bright {
+.ToggleGroup .Buttons .Active {
   background-color: orange;
 }
-.Quote .Up {
-  background-color: #00b300;
-}
-.Quote .Down {
-  background-color: #cc0000;
+.ToggleGroup .Buttons .Active:before {
+  background-color: darkorange;
 }
 
-/*# sourceMappingURL=Quote.module.css.map */
+/*# sourceMappingURL=ToggleGroup.module.css.map */

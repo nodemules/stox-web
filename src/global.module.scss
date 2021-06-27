@@ -7,6 +7,8 @@ $background: #000;
 .Block {
   display: inline-block;
   padding: .75rem 1.25rem;
+  margin-top: 1em;
+  margin-bottom: 1em;
   transform: rotate(-8deg) skew(-8deg, -8deg) translateY(-0.85rem);
   text-transform: uppercase;
   font-size: 1rem;
