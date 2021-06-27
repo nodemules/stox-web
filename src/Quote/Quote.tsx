@@ -45,7 +45,7 @@ const Quote = ({quote}: { quote?: GlobalQuote }) => {
                     return (
                         <>
                             <span className={className}>
-                                {change}
+                                {change.toFixed(2)}
                             </span>
                             <span className={className}>
                                 {changePercent}
