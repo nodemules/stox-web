@@ -4,7 +4,36 @@
 
   .Title {
     @extend .HoverableBlock;
+  }
 
+  .Equity {
+    @extend .HoverableBlock;
+    @include stripe($bright)
+  }
+
+  .EquityActive {
+    @extend .Equity;
+    @include active($bright)
+  }
+
+  .Cryptocurrency {
+    @extend .HoverableBlock;
+    @include stripe($extra)
+  }
+
+  .CryptocurrencyActive {
+    @extend .HoverableBlock;
+    @include active($extra)
+  }
+
+  .ETF {
+    @extend .HoverableBlock;
+    @include stripe($bold)
+  }
+
+  .ETFActive {
+    @extend .ETF;
+    @include active($bold)
   }
 
   .Quotes {

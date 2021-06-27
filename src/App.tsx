@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import Home from "./Home";
 import AuthenticationContext, {useAuthentication} from "./Authentication/AuthenticationContext";
-import {useAxios} from "./Api/Axios";
 
 const App = () => {
     const authentication = useAuthentication()

@@ -98,9 +98,43 @@ $background: #000;
     &:after {
       background-color: grey;
     }
+
     color: black;
     cursor: default;
   }
 }
 
+@mixin active($color) {
+  background-color: $color;
 
+  &:before {
+    background-color: $color;
+    width: 100%;
+  }
+
+  &:after {
+    background-color: $color;
+    width: 100%;
+  }
+}
+
+
+@mixin stripe($color) {
+
+  &:before {
+    background-color: $color;
+    width: 10px;
+  }
+
+  &:after {
+    background-color: $color;
+    width: 10px;
+  }
+
+  &:hover {
+    &:after {
+      background-color: $color;
+      transition-delay: 3s;
+    }
+  }
+}
