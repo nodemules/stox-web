@@ -6,12 +6,14 @@ import Authenticated from "./Authentication/Authenticated";
 import UserProfileBadge from "./User/UserProfileBadge";
 import Logout from "./Authentication/Logout";
 import GetQuote from "./Quote/GetQuote";
+import Trending from "./Trending/Trending";
+import {QuoteContextProvider} from "./Quote/QuoteContext";
 
 const Home = () => {
     return (
         <AuthenticationContext.Consumer>
             {
-                ({user, accessToken}) => (
+                ({authenticated}) => (
                     <>
                         <Logo name={"Stox"}/>
                         <p>
@@ -22,9 +24,12 @@ const Home = () => {
                             <div style={{paddingTop: "10px", marginBottom: "50px"}}>
                                 <Logout/>
                             </div>
-                            <GetQuote/>
+                            <QuoteContextProvider>
+                                <Trending />
+                                <GetQuote/>
+                            </QuoteContextProvider>
                         </Authenticated>
-                        {!user && <SignIn/>}
+                        {!authenticated && <SignIn/>}
                     </>
                 )
             }

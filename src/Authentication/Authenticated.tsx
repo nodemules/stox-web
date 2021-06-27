@@ -5,8 +5,8 @@ const Authenticated = ({children}: PropsWithChildren<any>) => {
     return (
         <AuthenticationContext.Consumer>
             {
-                ({user}) => (
-                    <>{user ? children : null}</>
+                ({authenticated}) => (
+                    <>{authenticated ? children : null}</>
                 )
             }
         </AuthenticationContext.Consumer>

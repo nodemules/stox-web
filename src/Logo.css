@@ -1,3 +1,76 @@
+.Block, .Button, .HoverableButton {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  transform: rotate(-8deg) skew(-8deg, -8deg) translateY(-0.85rem);
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: bolder;
+  letter-spacing: 0.15rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  width: fit-content;
+  white-space: nowrap;
+  border: 0;
+  color: #000;
+  font-family: "Doppio One", sans-serif;
+  background-color: white;
+  cursor: default;
+}
+
+.Hoverable:after, .HoverableButton:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+.Hoverable:before, .HoverableButton:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #402060;
+  transition: all 0.3s;
+  z-index: -1;
+}
+.Hoverable:hover, .HoverableButton:hover {
+  color: #fff;
+  background-color: #402060;
+}
+.Hoverable:hover:before, .HoverableButton:hover:before {
+  width: 100%;
+}
+
+.Button, .HoverableButton {
+  cursor: pointer;
+}
+
+.HoverableButton:hover {
+  color: inherit;
+}
+.HoverableButton:hover:before {
+  width: inherit;
+}
+.HoverableButton:hover:enabled {
+  color: #fff;
+}
+.HoverableButton:hover:enabled:before {
+  width: 100%;
+}
+.HoverableButton:disabled {
+  color: black;
+  cursor: default;
+}
+.HoverableButton:disabled:after {
+  background-color: grey;
+}
+
 .logo {
   background: #048C73;
   border: 0.4rem solid #000;
@@ -40,6 +113,7 @@ h1 {
   margin: 0 -40px;
   padding: 0;
   transform: scale(0.8, 1);
+  cursor: default;
 }
 
 .spanner {

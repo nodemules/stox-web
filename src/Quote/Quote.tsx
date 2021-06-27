@@ -1,6 +1,8 @@
 import style from "./Quote.module.scss";
+import {useState} from "react";
+import {getSparks} from "../Api/stox/MarketApi";
 
-interface GlobalQuote {
+export interface GlobalQuote {
     symbol: string,
     open: number,
     high: number,
@@ -13,27 +15,45 @@ interface GlobalQuote {
 }
 
 const Quote = ({quote}: { quote?: GlobalQuote }) => {
+
+    const [spark, setSpark] = useState<any>()
+
+    const sparkle = () => quote && getSparks([quote.symbol]).then(setSpark).catch(console.error)
+
     if (!quote) return null;
 
     const {symbol, price, latestTradingDay, change, changePercent} = quote;
 
     return (
         <div className={style.Quote}>
-            <span className={style.QuoteElement}>
+            <span className={style.Bright} onClick={sparkle}>
                 {symbol}
             </span>
-            <span className={style.QuoteElement}>
+            <span className={style.Element}>
                 ${price}
             </span>
-            <span className={style.QuoteElement}>
+            <span className={style.Element}>
                 {latestTradingDay}
             </span>
-            <span className={style.QuoteElement}>
-                {change}
-            </span>
-            <span className={style.QuoteElement}>
-                {changePercent}
-            </span>
+            {
+                (() => {
+                    const className = change === 0 ?
+                        style.Element
+                        : change > 0 ?
+                            style.Up
+                            : style.Down
+                    return (
+                        <>
+                            <span className={className}>
+                                {change}
+                            </span>
+                            <span className={className}>
+                                {changePercent}
+                            </span>
+                        </>
+                    )
+                })()
+            }
         </div>
     )
 }

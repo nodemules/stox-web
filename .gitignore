@@ -23,3 +23,9 @@ yarn-debug.log*
 yarn-error.log*
 
 .idea/
+
+### Sass.gitignore ###
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map

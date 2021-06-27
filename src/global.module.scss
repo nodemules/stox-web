@@ -1,0 +1,99 @@
+$stok: #048C73;
+$bold: #A6261B;
+$bright: #F2A413;
+$extra: #722C73;
+$background: #000;
+
+.Block {
+  display: inline-block;
+  padding: .75rem 1.25rem;
+  transform: rotate(-8deg) skew(-8deg, -8deg) translateY(-0.85rem);
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: bolder;
+  letter-spacing: .15rem;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  width: fit-content;
+  white-space: nowrap;
+  border: 0;
+  color: #000;
+  font-family: 'Doppio One', sans-serif;
+  background-color: white;
+  cursor: default;
+}
+
+.Hoverable {
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: darken(rebeccapurple, 15%);
+    transition: all .3s;
+    z-index: -1;
+  }
+
+  &:hover {
+    color: #fff;
+    background-color: darken(rebeccapurple, 15%);
+
+    &:before {
+      width: 100%;
+    }
+
+  }
+}
+
+.Button {
+  @extend .Block;
+  cursor: pointer;
+}
+
+.HoverableButton {
+  @extend .Button;
+  @extend .Hoverable;
+
+  &:hover {
+    color: inherit;
+
+    &:before {
+      width: inherit;
+    }
+
+  }
+
+  &:hover:enabled {
+    color: #fff;
+
+    &:before {
+      width: 100%;
+    }
+
+  }
+
+  &:disabled {
+    &:after {
+      background-color: grey;
+    }
+    color: black;
+    cursor: default;
+  }
+}
+
+

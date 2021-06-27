@@ -1,4 +1,4 @@
-.Block, .Button, .HoverableButton, .Logout {
+.Block, .Button, .HoverableButton {
   display: inline-block;
   padding: 0.75rem 1.25rem;
   transform: rotate(-8deg) skew(-8deg, -8deg) translateY(-0.85rem);
@@ -19,7 +19,7 @@
   cursor: default;
 }
 
-.Hoverable:after, .HoverableButton:after, .Logout:after {
+.Hoverable:after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -27,8 +27,9 @@
   width: 100%;
   height: 100%;
   z-index: -2;
+  background-color: rebeccapurple;
 }
-.Hoverable:before, .HoverableButton:before, .Logout:before {
+.Hoverable:before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -39,43 +40,31 @@
   transition: all 0.3s;
   z-index: -1;
 }
-.Hoverable:hover, .HoverableButton:hover, .Logout:hover {
+.Hoverable:hover {
   color: #fff;
-  background-color: #402060;
 }
-.Hoverable:hover:before, .HoverableButton:hover:before, .Logout:hover:before {
+.Hoverable:hover:before {
   width: 100%;
 }
 
-.Button, .HoverableButton, .Logout {
+.Button, .HoverableButton {
   cursor: pointer;
 }
 
-.HoverableButton:hover, .Logout:hover {
-  color: inherit;
-}
-.HoverableButton:hover:before, .Logout:hover:before {
+.HoverableButton:hover:before {
   width: inherit;
 }
-.HoverableButton:hover:enabled, .Logout:hover:enabled {
+.HoverableButton:hover:enabled {
   color: #fff;
 }
-.HoverableButton:hover:enabled:before, .Logout:hover:enabled:before {
+.HoverableButton:hover:enabled:before {
   width: 100%;
 }
-.HoverableButton:disabled, .Logout:disabled {
-  color: black;
+.HoverableButton:disabled {
   cursor: default;
 }
-.HoverableButton:disabled:after, .Logout:disabled:after {
+.HoverableButton:disabled:after {
   background-color: grey;
 }
 
-.Logout:after {
-  background-color: #048C73;
-}
-.Logout:before {
-  background-color: #03735f;
-}
-
-/*# sourceMappingURL=Logout.module.css.map */
+/*# sourceMappingURL=global.module.css.map */

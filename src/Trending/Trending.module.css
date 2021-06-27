@@ -1,4 +1,4 @@
-.Block, .Quote .Element, .Quote .Down, .Quote .Up, .Quote .Bright, .Button, .HoverableButton {
+.Block, .Trending .Buttons .Active, .Trending .Buttons .Button, .Trending .Buttons .HoverableButton, .Trending .Title, .Button, .HoverableButton {
   display: inline-block;
   padding: 0.75rem 1.25rem;
   transform: rotate(-8deg) skew(-8deg, -8deg) translateY(-0.85rem);
@@ -19,7 +19,7 @@
   cursor: default;
 }
 
-.Hoverable:after, .HoverableButton:after {
+.Hoverable:after, .Trending .Buttons .Active:after, .Trending .Buttons .Button:after, .Trending .Buttons .HoverableButton:after, .HoverableButton:after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -28,7 +28,7 @@
   height: 100%;
   z-index: -2;
 }
-.Hoverable:before, .HoverableButton:before {
+.Hoverable:before, .Trending .Buttons .Active:before, .Trending .Buttons .Button:before, .Trending .Buttons .HoverableButton:before, .HoverableButton:before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -39,11 +39,11 @@
   transition: all 0.3s;
   z-index: -1;
 }
-.Hoverable:hover, .HoverableButton:hover {
+.Hoverable:hover, .Trending .Buttons .Active:hover, .Trending .Buttons .Button:hover, .Trending .Buttons .HoverableButton:hover, .HoverableButton:hover {
   color: #fff;
   background-color: #402060;
 }
-.Hoverable:hover:before, .HoverableButton:hover:before {
+.Hoverable:hover:before, .Trending .Buttons .Active:hover:before, .Trending .Buttons .Button:hover:before, .Trending .Buttons .HoverableButton:hover:before, .HoverableButton:hover:before {
   width: 100%;
 }
 
@@ -71,17 +71,17 @@
   background-color: grey;
 }
 
-.Quote {
-  margin-top: 100px;
+.Trending .Buttons {
+  margin-top: 50px;
 }
-.Quote .Bright {
+.Trending .Buttons .Active {
   background-color: orange;
 }
-.Quote .Up {
-  background-color: #00b300;
+.Trending .Buttons .Active:before {
+  background-color: darkorange;
 }
-.Quote .Down {
-  background-color: #cc0000;
+.Trending .Quotes {
+  margin-top: 50px;
 }
 
-/*# sourceMappingURL=Quote.module.css.map */
+/*# sourceMappingURL=Trending.module.css.map */
