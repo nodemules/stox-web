@@ -1,5 +1,5 @@
 import axios, {AxiosRequestConfig} from "axios";
-import AuthenticationContext, {useAuthentication} from "../Authentication/AuthenticationContext";
+import AuthenticationContext from "../Authentication/AuthenticationContext";
 import {useContext} from "react";
 
 const instance = axios.create();

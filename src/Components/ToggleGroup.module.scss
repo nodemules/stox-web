@@ -10,7 +10,7 @@
     }
 
     .Active {
-      @extend .HoverableBlock;
+      @extend .Block;
 
       background-color: orange;
 

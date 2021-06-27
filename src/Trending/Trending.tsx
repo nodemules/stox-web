@@ -3,7 +3,7 @@ import {useCallback, useEffect, useState} from "react";
 import {getTrending} from "../Api/stox/MarketApi";
 import {GlobalQuote} from "../Quote/Quote";
 import TrendingQuote from "./TrendingQuote";
-import ToggleGroup from "../Components/ToggleGroup";
+import ToggleGroup, {ToggleButtonProps} from "../Components/ToggleGroup";
 
 const Trending = () => {
     const [open, setOpen] = useState(false)
@@ -15,6 +15,20 @@ const Trending = () => {
     }, [open, quoteType])
 
     const toggleVisibility = useCallback(() => setOpen(!open), [open])
+
+    const groups = [{
+        name: "EQUITY",
+        inactiveClassName: style.Equity,
+        activeClassName: style.EquityActive,
+    }, {
+        name: "CRYPTOCURRENCY",
+        inactiveClassName: style.Cryptocurrency,
+        activeClassName: style.CryptocurrencyActive,
+    }, {
+        name: "ETF",
+        inactiveClassName: style.ETF,
+        activeClassName: style.ETFActive,
+    }]
 
     return (
         <div className={style.Trending}>
@@ -28,7 +42,7 @@ const Trending = () => {
                 open ?
                     <>
                         <ToggleGroup
-                            elements={["EQUITY", "CRYPTOCURRENCY", "ETF"]}
+                            items={groups.map(it => it as ToggleButtonProps)}
                             selected={quoteType}
                             onSelected={setQuoteType}
                         />
