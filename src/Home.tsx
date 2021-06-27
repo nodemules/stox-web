@@ -8,8 +8,10 @@ import Logout from "./Authentication/Logout";
 import GetQuote from "./Quote/GetQuote";
 import Trending from "./Trending/Trending";
 import {QuoteContextProvider} from "./Quote/QuoteContext";
+import {useAxios} from "./Api/Axios";
 
 const Home = () => {
+    useAxios()
     return (
         <AuthenticationContext.Consumer>
             {

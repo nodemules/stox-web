@@ -4,29 +4,6 @@ $bright: #F2A413;
 $extra: #722C73;
 $background: #000;
 
-.Block {
-  display: inline-block;
-  padding: .75rem 1.25rem;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  transform: rotate(-8deg) skew(-8deg, -8deg) translateY(-0.85rem);
-  text-transform: uppercase;
-  font-size: 1rem;
-  font-weight: bolder;
-  letter-spacing: .15rem;
-  transition: all .3s;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  width: fit-content;
-  white-space: nowrap;
-  border: 0;
-  color: #000;
-  font-family: 'Doppio One', sans-serif;
-  background-color: white;
-  cursor: default;
-}
-
 .Hoverable {
 
   &:after {
@@ -60,6 +37,34 @@ $background: #000;
     }
 
   }
+}
+
+.Block {
+  display: inline-block;
+  padding: .75rem 1.25rem;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  transform: rotate(-8deg) skew(-8deg, -8deg) translateY(-0.85rem);
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: bolder;
+  letter-spacing: .15rem;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  width: fit-content;
+  white-space: nowrap;
+  border: 0;
+  color: #000;
+  font-family: 'Doppio One', sans-serif;
+  background-color: white;
+  cursor: default;
+}
+
+.HoverableBlock {
+  @extend .Block;
+  @extend .Hoverable;
 }
 
 .Button {

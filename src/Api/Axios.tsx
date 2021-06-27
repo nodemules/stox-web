@@ -1,11 +1,12 @@
 import axios, {AxiosRequestConfig} from "axios";
-import {useAuthentication} from "../Authentication/AuthenticationContext";
+import AuthenticationContext, {useAuthentication} from "../Authentication/AuthenticationContext";
+import {useContext} from "react";
 
 const instance = axios.create();
 
 export const useAxios = () => {
 
-    const authentication = useAuthentication();
+    const authentication = useContext(AuthenticationContext)
 
     const setAuthorizationHeader = (config: AxiosRequestConfig): AxiosRequestConfig => {
         if (authentication.accessToken) config.headers["Authorization"] = `Bearer ${authentication.accessToken}`

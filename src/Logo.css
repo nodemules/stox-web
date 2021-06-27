@@ -1,4 +1,32 @@
-.Block, .Button, .HoverableButton {
+.Hoverable:after, .HoverableButton:after, .HoverableBlock:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+.Hoverable:before, .HoverableButton:before, .HoverableBlock:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #402060;
+  transition: all 0.3s;
+  z-index: -1;
+}
+.Hoverable:hover, .HoverableButton:hover, .HoverableBlock:hover {
+  color: #fff;
+  background-color: #402060;
+}
+.Hoverable:hover:before, .HoverableButton:hover:before, .HoverableBlock:hover:before {
+  width: 100%;
+}
+
+.Block, .Button, .HoverableButton, .HoverableBlock {
   display: inline-block;
   padding: 0.75rem 1.25rem;
   margin-top: 1em;
@@ -19,34 +47,6 @@
   font-family: "Doppio One", sans-serif;
   background-color: white;
   cursor: default;
-}
-
-.Hoverable:after, .HoverableButton:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -2;
-}
-.Hoverable:before, .HoverableButton:before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: #402060;
-  transition: all 0.3s;
-  z-index: -1;
-}
-.Hoverable:hover, .HoverableButton:hover {
-  color: #fff;
-  background-color: #402060;
-}
-.Hoverable:hover:before, .HoverableButton:hover:before {
-  width: 100%;
 }
 
 .Button, .HoverableButton {

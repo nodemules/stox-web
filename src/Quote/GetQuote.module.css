@@ -1,4 +1,32 @@
-.Block, .Button, .HoverableButton, .Clear, .Submit {
+.Hoverable:after, .HoverableButton:after, .Clear:after, .Submit:after, .HoverableBlock:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+.Hoverable:before, .HoverableButton:before, .Clear:before, .Submit:before, .HoverableBlock:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #402060;
+  transition: all 0.3s;
+  z-index: -1;
+}
+.Hoverable:hover, .HoverableButton:hover, .Clear:hover, .Submit:hover, .HoverableBlock:hover {
+  color: #fff;
+  background-color: #402060;
+}
+.Hoverable:hover:before, .HoverableButton:hover:before, .Clear:hover:before, .Submit:hover:before, .HoverableBlock:hover:before {
+  width: 100%;
+}
+
+.Block, .Button, .HoverableButton, .Clear, .Submit, .HoverableBlock {
   display: inline-block;
   padding: 0.75rem 1.25rem;
   margin-top: 1em;
@@ -19,34 +47,6 @@
   font-family: "Doppio One", sans-serif;
   background-color: white;
   cursor: default;
-}
-
-.Hoverable:after, .HoverableButton:after, .Clear:after, .Submit:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -2;
-}
-.Hoverable:before, .HoverableButton:before, .Clear:before, .Submit:before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: #402060;
-  transition: all 0.3s;
-  z-index: -1;
-}
-.Hoverable:hover, .HoverableButton:hover, .Clear:hover, .Submit:hover {
-  color: #fff;
-  background-color: #402060;
-}
-.Hoverable:hover:before, .HoverableButton:hover:before, .Clear:hover:before, .Submit:hover:before {
-  width: 100%;
 }
 
 .Button, .HoverableButton, .Clear, .Submit {

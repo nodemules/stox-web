@@ -6,7 +6,6 @@ import {useAxios} from "./Api/Axios";
 
 const App = () => {
     const authentication = useAuthentication()
-    useAxios()
 
     return (
         <div className="App">

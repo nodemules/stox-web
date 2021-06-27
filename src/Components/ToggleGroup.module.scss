@@ -6,13 +6,11 @@
     margin-top: 50px;
 
     .Button {
-      @extend .Block;
-      @extend .Hoverable;
+      @extend .HoverableBlock;
     }
 
     .Active {
-      @extend .Block;
-      @extend .Hoverable;
+      @extend .HoverableBlock;
 
       background-color: orange;
 
