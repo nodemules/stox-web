@@ -3,14 +3,15 @@ import {GlobalQuote} from "../Quote/Quote";
 import QuoteContext from "../Quote/QuoteContext";
 import {useContext} from "react";
 
-const TrendingQuote = ({quote}: { quote: GlobalQuote }) => {
+const TrendingQuote = ({quote, className = style.Element}: { quote: GlobalQuote, className: string | undefined }) => {
     const quoteContext = useContext(QuoteContext)
 
-    const {symbol} = quote;
+    const {symbol, price} = quote;
     return (
         <span className={style.TrendingQuote}>
-            <span className={style.Element} onClick={() => quoteContext.set(quote)}>
-                {symbol}
+            <span className={className} onClick={() => quoteContext.set(quote)}>
+                <div>{symbol}</div>
+                <div>{price}</div>
             </span>
         </span>
     )

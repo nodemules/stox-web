@@ -74,7 +74,9 @@
 }
 
 .TrendingQuote {
-  width: 20%;
+  margin: 0.25em auto;
+  display: inline-flex;
+  justify-content: space-between;
 }
 .TrendingQuote .Element:before {
   content: "";

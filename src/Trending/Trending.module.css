@@ -1,4 +1,4 @@
-.Hoverable:after, .HoverableButton:after, .HoverableBlock:after, .Trending .ETF:after, .Trending .ETFActive:after, .Trending .CryptocurrencyActive:after, .Trending .Cryptocurrency:after, .Trending .Equity:after, .Trending .EquityActive:after, .Trending .Title:after {
+.Hoverable:after, .HoverableButton:after, .HoverableBlock:after, .Index:after, .IndexActive:after, .Future:after, .FutureActive:after, .ETF:after, .ETFActive:after, .CryptocurrencyActive:after, .Cryptocurrency:after, .Equity:after, .EquityActive:after, .Trending .Title:after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -7,7 +7,7 @@
   height: 100%;
   z-index: -2;
 }
-.Hoverable:before, .HoverableButton:before, .HoverableBlock:before, .Trending .ETF:before, .Trending .ETFActive:before, .Trending .CryptocurrencyActive:before, .Trending .Cryptocurrency:before, .Trending .Equity:before, .Trending .EquityActive:before, .Trending .Title:before {
+.Hoverable:before, .HoverableButton:before, .HoverableBlock:before, .Index:before, .IndexActive:before, .Future:before, .FutureActive:before, .ETF:before, .ETFActive:before, .CryptocurrencyActive:before, .Cryptocurrency:before, .Equity:before, .EquityActive:before, .Trending .Title:before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -18,15 +18,15 @@
   transition: all 0.3s;
   z-index: -1;
 }
-.Hoverable:hover, .HoverableButton:hover, .HoverableBlock:hover, .Trending .ETF:hover, .Trending .ETFActive:hover, .Trending .CryptocurrencyActive:hover, .Trending .Cryptocurrency:hover, .Trending .Equity:hover, .Trending .EquityActive:hover, .Trending .Title:hover {
+.Hoverable:hover, .HoverableButton:hover, .HoverableBlock:hover, .Index:hover, .IndexActive:hover, .Future:hover, .FutureActive:hover, .ETF:hover, .ETFActive:hover, .CryptocurrencyActive:hover, .Cryptocurrency:hover, .Equity:hover, .EquityActive:hover, .Trending .Title:hover {
   color: #fff;
   background-color: #402060;
 }
-.Hoverable:hover:before, .HoverableButton:hover:before, .HoverableBlock:hover:before, .Trending .ETF:hover:before, .Trending .ETFActive:hover:before, .Trending .CryptocurrencyActive:hover:before, .Trending .Cryptocurrency:hover:before, .Trending .Equity:hover:before, .Trending .EquityActive:hover:before, .Trending .Title:hover:before {
+.Hoverable:hover:before, .HoverableButton:hover:before, .HoverableBlock:hover:before, .Index:hover:before, .IndexActive:hover:before, .Future:hover:before, .FutureActive:hover:before, .ETF:hover:before, .ETFActive:hover:before, .CryptocurrencyActive:hover:before, .Cryptocurrency:hover:before, .Equity:hover:before, .EquityActive:hover:before, .Trending .Title:hover:before {
   width: 100%;
 }
 
-.Block, .Button, .HoverableButton, .HoverableBlock, .Trending .ETF, .Trending .ETFActive, .Trending .CryptocurrencyActive, .Trending .Cryptocurrency, .Trending .Equity, .Trending .EquityActive, .Trending .Title {
+.Block, .Button, .HoverableButton, .HoverableBlock, .Index, .IndexActive, .Future, .FutureActive, .ETF, .ETFActive, .CryptocurrencyActive, .Cryptocurrency, .Equity, .EquityActive, .Trending .Title {
   display: inline-block;
   padding: 0.75rem 1.25rem;
   margin-top: 1em;
@@ -73,77 +73,133 @@
   background-color: grey;
 }
 
-.Trending .Equity:before, .Trending .EquityActive:before {
-  background-color: #F2A413;
-  width: 10px;
-}
-.Trending .Equity:after, .Trending .EquityActive:after {
-  background-color: #F2A413;
-  width: 10px;
-}
-.Trending .Equity:hover:after, .Trending .EquityActive:hover:after {
-  background-color: #F2A413;
-  transition-delay: 3s;
-}
-.Trending .EquityActive {
-  background-color: #F2A413;
-}
-.Trending .EquityActive:before {
-  background-color: #F2A413;
-  width: 100%;
-}
-.Trending .EquityActive:after {
-  background-color: #F2A413;
-  width: 100%;
-}
-.Trending .Cryptocurrency:before {
-  background-color: #722C73;
-  width: 10px;
-}
-.Trending .Cryptocurrency:after {
-  background-color: #722C73;
-  width: 10px;
-}
-.Trending .Cryptocurrency:hover:after {
-  background-color: #722C73;
-  transition-delay: 3s;
-}
-.Trending .CryptocurrencyActive {
-  background-color: #722C73;
-}
-.Trending .CryptocurrencyActive:before {
-  background-color: #722C73;
-  width: 100%;
-}
-.Trending .CryptocurrencyActive:after {
-  background-color: #722C73;
-  width: 100%;
-}
-.Trending .ETF:before, .Trending .ETFActive:before {
-  background-color: #A6261B;
-  width: 10px;
-}
-.Trending .ETF:after, .Trending .ETFActive:after {
-  background-color: #A6261B;
-  width: 10px;
-}
-.Trending .ETF:hover:after, .Trending .ETFActive:hover:after {
-  background-color: #A6261B;
-  transition-delay: 3s;
-}
-.Trending .ETFActive {
-  background-color: #A6261B;
-}
-.Trending .ETFActive:before {
-  background-color: #A6261B;
-  width: 100%;
-}
-.Trending .ETFActive:after {
-  background-color: #A6261B;
-  width: 100%;
-}
 .Trending .Quotes {
   margin-top: 50px;
+}
+
+.Equity:before, .EquityActive:before {
+  background-color: #F2A413;
+  width: 10px;
+}
+.Equity:after, .EquityActive:after {
+  background-color: #F2A413;
+  width: 10px;
+}
+.Equity:hover:after, .EquityActive:hover:after {
+  background-color: #F2A413;
+  transition-delay: 3s;
+}
+
+.EquityActive {
+  background-color: #F2A413;
+}
+.EquityActive:before {
+  background-color: #F2A413;
+  width: 100%;
+}
+.EquityActive:after {
+  background-color: #F2A413;
+  width: 100%;
+}
+
+.Cryptocurrency:before {
+  background-color: #722C73;
+  width: 10px;
+}
+.Cryptocurrency:after {
+  background-color: #722C73;
+  width: 10px;
+}
+.Cryptocurrency:hover:after {
+  background-color: #722C73;
+  transition-delay: 3s;
+}
+
+.CryptocurrencyActive {
+  background-color: #722C73;
+}
+.CryptocurrencyActive:before {
+  background-color: #722C73;
+  width: 100%;
+}
+.CryptocurrencyActive:after {
+  background-color: #722C73;
+  width: 100%;
+}
+
+.ETF:before, .ETFActive:before {
+  background-color: #A6261B;
+  width: 10px;
+}
+.ETF:after, .ETFActive:after {
+  background-color: #A6261B;
+  width: 10px;
+}
+.ETF:hover:after, .ETFActive:hover:after {
+  background-color: #A6261B;
+  transition-delay: 3s;
+}
+
+.ETFActive {
+  background-color: #A6261B;
+}
+.ETFActive:before {
+  background-color: #A6261B;
+  width: 100%;
+}
+.ETFActive:after {
+  background-color: #A6261B;
+  width: 100%;
+}
+
+.Future:before, .FutureActive:before {
+  background-color: green;
+  width: 10px;
+}
+.Future:after, .FutureActive:after {
+  background-color: green;
+  width: 10px;
+}
+.Future:hover:after, .FutureActive:hover:after {
+  background-color: green;
+  transition-delay: 3s;
+}
+
+.FutureActive {
+  background-color: green;
+}
+.FutureActive:before {
+  background-color: green;
+  width: 100%;
+}
+.FutureActive:after {
+  background-color: green;
+  width: 100%;
+}
+
+.Index:before, .IndexActive:before {
+  background-color: blue;
+  width: 10px;
+}
+.Index:after, .IndexActive:after {
+  background-color: blue;
+  width: 10px;
+}
+.Index:hover:after, .IndexActive:hover:after {
+  background-color: blue;
+  transition-delay: 3s;
+}
+
+.IndexActive {
+  background-color: blue;
+}
+.IndexActive:before {
+  background-color: blue;
+  width: 100%;
+}
+.IndexActive:after {
+  background-color: blue;
+  width: 100%;
 }
 
 /*# sourceMappingURL=Trending.module.css.map */
