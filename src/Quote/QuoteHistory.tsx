@@ -28,7 +28,7 @@ const QuoteHistory = () => {
     }, [history])
 
     return (
-        <div>
+        <div style={{width: "fit-content", margin: "auto"}}>
             {
                 history.length > 1 &&
                 <div style={{marginBottom: "1em"}}>

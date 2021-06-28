@@ -5,6 +5,7 @@ import {Equity, EquityActive, Cryptocurrency, CryptocurrencyActive, ETF, ETFActi
 import style from "./Quote.module.scss";
 import {useState} from "react";
 import {getSparks} from "../Api/stox/MarketApi";
+import Currency from "../Components/Currency";
 
 export interface GlobalQuote {
     quoteType: string | undefined,
@@ -67,7 +68,7 @@ const Quote = ({quote}: { quote?: GlobalQuote }) => {
                 {symbol}
             </span>
             <span className={style.Element}>
-                ${price}
+                                <Currency value={price} />
             </span>
             <span className={style.Element}>
                 {latestTradingDay}
@@ -82,7 +83,7 @@ const Quote = ({quote}: { quote?: GlobalQuote }) => {
                     return (
                         <>
                             <span className={className}>
-                                {change.toFixed(2)}
+                                <Currency value={change} />
                             </span>
                             <span className={className}>
                                 {changePercent}
