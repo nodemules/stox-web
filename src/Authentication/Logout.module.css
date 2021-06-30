@@ -20,10 +20,9 @@
 }
 .Hoverable:hover, .HoverableButton:hover, .Logout:hover, .HoverableBlock:hover {
   color: #fff;
-  background-color: #402060;
 }
 .Hoverable:hover:before, .HoverableButton:hover:before, .Logout:hover:before, .HoverableBlock:hover:before {
-  width: 100%;
+  width: -webkit-calc(100% - 10px);
 }
 
 .Block, .Button, .HoverableButton, .Logout, .HoverableBlock {
@@ -63,7 +62,7 @@
   color: #fff;
 }
 .HoverableButton:hover:enabled:before, .Logout:hover:enabled:before {
-  width: 100%;
+  width: 90%;
 }
 .HoverableButton:disabled, .Logout:disabled {
   color: black;

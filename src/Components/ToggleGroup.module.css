@@ -20,10 +20,9 @@
 }
 .Hoverable:hover, .HoverableButton:hover, .HoverableBlock:hover, .ToggleGroup .Buttons .Button:hover, .ToggleGroup .Buttons .HoverableButton:hover {
   color: #fff;
-  background-color: #402060;
 }
 .Hoverable:hover:before, .HoverableButton:hover:before, .HoverableBlock:hover:before, .ToggleGroup .Buttons .Button:hover:before, .ToggleGroup .Buttons .HoverableButton:hover:before {
-  width: 100%;
+  width: -webkit-calc(100% - 10px);
 }
 
 .Block, .ToggleGroup .Buttons .Active, .Button, .HoverableButton, .HoverableBlock, .ToggleGroup .Buttons .Button, .ToggleGroup .Buttons .HoverableButton {
@@ -63,7 +62,7 @@
   color: #fff;
 }
 .HoverableButton:hover:enabled:before {
-  width: 100%;
+  width: 90%;
 }
 .HoverableButton:disabled {
   color: black;

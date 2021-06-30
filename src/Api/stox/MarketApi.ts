@@ -1,5 +1,6 @@
 import instance from "../Axios";
 import {GlobalQuote} from "../../Quote/Quote";
+import Spark from "../../Chart/Spark";
 
 const host = "http://localhost:8201";
 
@@ -12,8 +13,12 @@ export const getTrending = (quoteType: String | undefined): Promise<Array<Global
         throw error.response.data
     })
 
-export const getSparks = (symbols: Array<String>): Promise<Array<any>> =>
+export const getSparks = (symbols: Array<String>): Promise<Array<Spark>> =>
     instance.get(`${host}/market/sparks`, {
         params: {symbol: symbols},
         paramsSerializer: params => params.symbol.map((symbol: String) => `symbol=${symbol}`).join("&")
+    })
+    .then(response => (response.data))
+    .catch(error => {
+        throw error.response.data
     })

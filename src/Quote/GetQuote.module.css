@@ -20,10 +20,9 @@
 }
 .Hoverable:hover, .HoverableButton:hover, .Clear:hover, .Submit:hover, .HoverableBlock:hover {
   color: #fff;
-  background-color: #402060;
 }
 .Hoverable:hover:before, .HoverableButton:hover:before, .Clear:hover:before, .Submit:hover:before, .HoverableBlock:hover:before {
-  width: 100%;
+  width: -webkit-calc(100% - 10px);
 }
 
 .Block, .Button, .HoverableButton, .Clear, .Submit, .HoverableBlock {
@@ -63,7 +62,7 @@
   color: #fff;
 }
 .HoverableButton:hover:enabled:before, .Clear:hover:enabled:before, .Submit:hover:enabled:before {
-  width: 100%;
+  width: 90%;
 }
 .HoverableButton:disabled, .Clear:disabled, .Submit:disabled {
   color: black;
