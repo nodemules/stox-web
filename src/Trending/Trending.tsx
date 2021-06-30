@@ -28,6 +28,14 @@ const Trending = () => {
         name: "ETF",
         inactiveClassName: style.ETF,
         activeClassName: style.ETFActive,
+    }, {
+        name: "FUTURE",
+        inactiveClassName: style.Future,
+        activeClassName: style.FutureActive,
+    }, {
+        name: "INDEX",
+        inactiveClassName: style.Index,
+        activeClassName: style.IndexActive,
     }]
 
     return (
@@ -48,8 +56,14 @@ const Trending = () => {
                         />
                         <div className={style.Quotes}>
                             {
-                                trending.map(quote => (
-                                    <TrendingQuote key={quote.symbol} quote={quote}/>))
+                                trending
+                                .map(quote => (
+                                    <TrendingQuote
+                                        key={quote.symbol}
+                                        quote={quote}
+                                        className={groups.find(({name}) => name === quote.quoteType)?.inactiveClassName}
+                                    />
+                                ))
                             }
                         </div>
                     </>

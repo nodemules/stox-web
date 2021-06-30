@@ -6,37 +6,57 @@
     @extend .HoverableBlock;
   }
 
-  .Equity {
-    @extend .HoverableBlock;
-    @include stripe($bright)
-  }
-
-  .EquityActive {
-    @extend .Equity;
-    @include active($bright)
-  }
-
-  .Cryptocurrency {
-    @extend .HoverableBlock;
-    @include stripe($extra)
-  }
-
-  .CryptocurrencyActive {
-    @extend .HoverableBlock;
-    @include active($extra)
-  }
-
-  .ETF {
-    @extend .HoverableBlock;
-    @include stripe($bold)
-  }
-
-  .ETFActive {
-    @extend .ETF;
-    @include active($bold)
-  }
-
   .Quotes {
     margin-top: 50px;
   }
+}
+
+.Equity {
+  @extend .HoverableBlock;
+  @include stripe($bright)
+}
+
+.EquityActive {
+  @extend .Equity;
+  @include active($bright)
+}
+
+.Cryptocurrency {
+  @extend .HoverableBlock;
+  @include stripe($extra)
+}
+
+.CryptocurrencyActive {
+  @extend .HoverableBlock;
+  @include active($extra)
+}
+
+.ETF {
+  @extend .HoverableBlock;
+  @include stripe($bold)
+}
+
+.ETFActive {
+  @extend .ETF;
+  @include active($bold)
+}
+
+.Future {
+  @extend .HoverableBlock;
+  @include stripe($future)
+}
+
+.FutureActive {
+  @extend .Future;
+  @include active($future)
+}
+
+.Index {
+  @extend .HoverableBlock;
+  @include stripe($index)
+}
+
+.IndexActive {
+  @extend .Index;
+  @include active($index)
 }
