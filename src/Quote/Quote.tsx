@@ -1,11 +1,11 @@
-/* eslint-disable */
-// @ts-ignore
-import {Equity, EquityActive, Cryptocurrency, CryptocurrencyActive, ETF, ETFActive, Future, FutureActive, Index, IndexActive} from "../Trending/Trending.module.scss"
-/* eslint-enable */
 import style from "./Quote.module.scss";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {getSparks} from "../Api/stox/MarketApi";
 import Currency from "../Components/Currency";
+import TickerBlock from "../Ticker/TickerBlock";
+import SparkChart from "../Chart/SparkChart";
+import Spark from "../Chart/Spark";
+import {fromQuoteType} from "../Ticker/TickerType";
 
 export interface GlobalQuote {
     quoteType: string | undefined,
@@ -20,78 +20,58 @@ export interface GlobalQuote {
     changePercent: string
 }
 
-type QuoteType = {
-    name: string,
-    inactiveClassName: string | undefined,
-    activeClassName: string | undefined
-}
-
-const quoteTypes = [{
-    name: "EQUITY",
-    inactiveClassName: Equity,
-    activeClassName: EquityActive,
-}, {
-    name: "CRYPTOCURRENCY",
-    inactiveClassName: Cryptocurrency,
-    activeClassName: CryptocurrencyActive,
-}, {
-    name: "ETF",
-    inactiveClassName: ETF,
-    activeClassName: ETFActive,
-}, {
-    name: "FUTURE",
-    inactiveClassName: Future,
-    activeClassName: FutureActive,
-}, {
-    name: "INDEX",
-    inactiveClassName: Index,
-    activeClassName: IndexActive,
-}].map(quoteType => quoteType as QuoteType)
-
-const quoteTypesMap = quoteTypes.reduce((map, quoteType) => ({...map, [quoteType.name]: quoteType}), {})
-
 const Quote = ({quote}: { quote?: GlobalQuote }) => {
 
-    const [spark, setSpark] = useState<any>()
+    const [spark, setSpark] = useState<Spark>()
 
-    const sparkle = () => quote && getSparks([quote.symbol]).then(setSpark).catch(console.error)
+    const sparkle = () =>
+        quote && getSparks([quote.symbol])
+        .then(sparks => sparks[0] && setSpark(sparks[0]))
+        .catch(console.error)
+
+    useEffect(() => {
+        setSpark(spark => undefined)
+    }, [quote])
 
     if (!quote) return null;
 
     const {quoteType = "", symbol, price, latestTradingDay, change, changePercent} = quote;
 
-    const {inactiveClassName: className} = (quoteTypesMap as any)[quoteType] || {}
+    const tickerType = fromQuoteType(quoteType)
 
     return (
-        <div className={style.Quote}>
-            <span className={className || style.Element} onClick={sparkle}>
-                {symbol}
+        <div>
+            <div className={style.Quote}>
+                <TickerBlock quoteType={quoteType} onClick={sparkle}>
+                    {symbol}
+                </TickerBlock>
+                <span className={style.Element}>
+                <Currency value={price}/>
             </span>
-            <span className={style.Element}>
-                                <Currency value={price} />
-            </span>
-            <span className={style.Element}>
+                <span className={style.Element}>
                 {latestTradingDay}
             </span>
-            {
-                (() => {
-                    const className = change === 0 ?
-                        style.Element
-                        : change > 0 ?
-                            style.Up
-                            : style.Down
-                    return (
-                        <>
+                {
+                    (() => {
+                        const className = change === 0 ?
+                            style.Element
+                            : change > 0 ?
+                                style.Up
+                                : style.Down
+                        return (
+                            <>
                             <span className={className}>
-                                <Currency value={change} />
+                                <Currency value={change}/>
                             </span>
-                            <span className={className}>
+                                <span className={className}>
                                 {changePercent}
                             </span>
-                        </>
-                    )
-                })()
-            }
+                            </>
+                        )
+                    })()
+                }
+            </div>
+            {spark && <SparkChart spark={spark} tickerType={tickerType}/>}
         </div>
     )
 }
